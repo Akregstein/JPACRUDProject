@@ -33,18 +33,25 @@ public class CountryDaoJpaImpl implements CountryDAO {
 	public Country addCountry(Country country) {
 	
 		
-		//start a transaction
-	//	em.getTransaction().begin();
-		
 		System.out.println("BEFORE: " + country);
 		
 		em.persist(country);
 		
 		System.out.println("AFTER: " + country);
 		
-		//close
-		//em.getTransaction().commit();
-		//em.close();
+		
+		return country;
+	}
+	@Override
+	public Country deleteCountry(Country country) {
+		
+		
+		System.out.println("BEFORE: " + country);
+		
+		em.remove(country);
+		
+		System.out.println("AFTER: " + country);
+		
 		
 		return country;
 	}

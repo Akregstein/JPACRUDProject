@@ -25,20 +25,61 @@ public class CountryController {
 		return "home";
 	}
 	@RequestMapping(path = "addCountry.do", method = RequestMethod.POST)
-	public ModelAndView addCountry(String name, String capital, Integer population, String greeting, String language, String currency,
-			Integer highestElevation, RedirectAttributes redir) {
+	public ModelAndView addCountry(Country country, RedirectAttributes redir) {
 		ModelAndView mv = new ModelAndView();
-		Country country = new Country();
-		country.setName(name);
-		country.setCapital(capital);
-		country.setPopulation(population);
-		country.setGreeting(greeting);
-		country.setLanguage(language);
-
+		
 		dao.addCountry(country);
-		redir.addFlashAttribute("Country", country);
-		mv.setViewName("redirect:ountryAdded.do");
+		redir.addFlashAttribute("country", country);
+		mv.setViewName("redirect:countryAdded.do");
 		return mv;
 
 	}
+	@RequestMapping(path = "add.do")
+	public ModelAndView add(Country country) {
+		ModelAndView mv = new ModelAndView();
+		
+		
+		mv.setViewName("addcountry");
+		return mv;
+		
+	}
+	@RequestMapping(path = "deleteCountry.do", method = RequestMethod.POST)
+	public ModelAndView deleteCountry(Country country, RedirectAttributes redir) {
+		ModelAndView mv = new ModelAndView();
+		
+		dao.deleteCountry(country);
+		redir.addFlashAttribute("country", country);
+		mv.setViewName("redirect:countryDeleted.do");
+		return mv;
+		
+	}
+	@RequestMapping(path = "delete.do")
+	public ModelAndView delete(Country country, RedirectAttributes redir) {
+		ModelAndView mv = new ModelAndView();
+		
+		
+		mv.setViewName("delete");
+		return mv;
+		
+	}
+	@RequestMapping(path = "search.do")
+	public ModelAndView search(Country country, RedirectAttributes redir) {
+		ModelAndView mv = new ModelAndView();
+		
+		
+		mv.setViewName("search");
+		return mv;
+		
+	}
+	@RequestMapping(path = "countryAdded.do", method = RequestMethod.GET)
+	public ModelAndView addCountry(Country country) {
+		ModelAndView mv = new ModelAndView();
+		
+		mv.setViewName("show");
+		return mv;
+
+	}
+	
+	
+//	@RequestMapping(path = "countryAdded.do", method = RequestMethod.POST)
 }
