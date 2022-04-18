@@ -10,27 +10,49 @@ Technologies Used:
 The following technologies were required to make this program function properly:
 
 Object Oriented Programming (Java)
+
 Interfaces
+
 Databases
+
 JDBC
+
 MySQL queries
+
 MySQL transactions
+
 DriverManager
+
 Prepared Statements
+
 Gradle
+
 HTML/CSS
+
 JSP
+
 Git
+
 Spring Servlets
+
 Spring Controller
+
 Spring Mapping
+
 MAMP
+
 Atom
+
 ZSH Shell
+
 SpringToolSuite4
+
 Tomcat v8.5 local server
+
 Slack for organization
+
 JPA
+
 MySQL Workbench
 
 
