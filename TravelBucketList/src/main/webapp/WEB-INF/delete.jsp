@@ -6,36 +6,16 @@
 <head>
 <meta charset="UTF-8">
 <title>Delete a Country</title>
+<link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
-
+<a href="home.do" id="id">BucketList Homepage</a>
 	<h3>Delete a Country</h3>
 
 	<form action="deleteCountry.do" method="POST">
-		<label for="name">Name:</label> <input type="text" name="name">
+		<label for="countryId">Id:</label> <input type="number" name="countryId">
 		<br> 
-		<label for="capital">Capital:</label> <input type="text"name="capital">
-			 <br> 
-			<label for="population">Population:</label>
-		<input type="text" name="population">
-		 <br>
-		 <label
-			for="greeting">Greeting:</label> <input type="text"
-			name="greeting">
-			 <br> 
-			 <label for="mustTryDish">MustTryDish:</label>
-		<input type="text" name="mustTryDish">
-		 <br> 
-		 <label
-			for="language">Language:</label> <input type="text" name="language">
-		<br> 
-		<label for="currency">Currency:</label> <input type="text" name="currency"> 
-			<br> 
-			
-			<label for="highestElevation">HighestElevation:</label> <input type="text"
-			name="highestElevation"> 
-			<br>
-			<input type="submit" value="Delete Country">
+		<input type="submit" value="Delete Country">
 	</form>
 </body>
 </html>

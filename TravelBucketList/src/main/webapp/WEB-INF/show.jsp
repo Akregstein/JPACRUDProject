@@ -6,29 +6,31 @@
 <meta charset="UTF-8">
 <title>Country Details</title>
 <%-- <jsp:include page="bootstrapHead.jsp" /> --%>
+<link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
+<a href="home.do" id="id">BucketList Homepage</a>
 
 <div class="container-fluid">
 	<h1>Country Details</h1>
 
 	<div>
-		<h5>${country.name}</h5>
-		<p>${country.capital}</p>
+		<h3>${country.name}</h3>
+		<p>Capital City: ${country.capital}</p>
 		<br>
-		<p>${country.population}</p>
+		<p>Population: ${country.population}</p>
 		<br>
-		<p>${country.greeting}</p>
+		<p>Common greeting:${country.greeting}</p>
 		<br>
-		<p>${country.mustTryDish}</p>
+		<p>Must try Dish:${country.mustTryDish}</p>
 		<br>
-		<p>${country.language}</p>
+		<p>Language: ${country.language}</p>
 		<br>
-		<p>${country.currency}</p>
+		<p>Currency: ${country.currency}</p>
 		<br>
-		<p>${country.highestElevation}</p>
+		<p>Highest Elevation: ${country.highestElevation}</p>
 		<br>
-		<p>${country.population}</p>
+	
 	</div>
 </div>
 

@@ -7,30 +7,27 @@
 <head>
 <meta charset="UTF-8">
 <title>Keyword</title>
+<link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
 
+<h1>
+		<a href="home.do" id="id">BucketList Homepage</a>
+	</h1>
+	
 <h3>Search By Keyword</h3>
+<form action="findByKeyword.do" method="GET">
 
-<form action="search.do" method="POST">
+<h1>Search Country By Keyword</h1>
 
-<c:choose>
-	
-	<c:when test="${! empty film}">
-		<ul>
-			<c:forEach var="c" items="${country}">
-					<li><p><a href="findByID.do?id=${c.id}" class ="keyword">ID: ${c.id} Title: ${c.title} </a></p></li>
-			</c:forEach>
-		</ul>
-	
-	</c:when>
-	
-	<c:otherwise>
-	
-		<h2>No Country found matching your search.</h2>
-	
-	</c:otherwise>
-	
-	</c:choose>
+Keyword: <input type="text" name="keyword" />
+	<input type="submit" value="submit" />
+
+</form>
+
+
+
+
+
 </body>
 </html>

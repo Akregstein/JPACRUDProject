@@ -1,0 +1,52 @@
+#id {
+	font-size: 28px;
+	font-weight: bold;
+	color: purple;
+	text-align: center;
+	text-decoration: none;
+	border-style: double;
+	border-color: black;
+	
+}
+
+body {
+	background: #efefef;
+	background-image: url("../images/pexels-henry-&-co-1939485.jpg");
+	font-family: arial;
+	text-align: center;
+}
+
+ h1 {
+	font-size: 24px;
+	color: Darkblue;
+} 
+
+a {
+	color: #000000;
+	text-decoration: underline;
+	text-align: center;
+	}
+
+a:hover {
+	color: #000000;
+	text-decoration: none;
+}
+
+h2 {
+	font-size: 24px;
+	color: Darkblue;
+}
+
+.starter {
+	font-weight: bold;
+	font-size: 30px;
+}
+
+ul {
+	list-style: none;
+}
+
+.keyword {
+	font-weight: bold;
+	font-size: 20px;
+}

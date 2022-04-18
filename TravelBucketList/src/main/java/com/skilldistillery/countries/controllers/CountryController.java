@@ -1,5 +1,7 @@
 package com.skilldistillery.countries.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -44,12 +46,12 @@ public class CountryController {
 		
 	}
 	@RequestMapping(path = "deleteCountry.do", method = RequestMethod.POST)
-	public ModelAndView deleteCountry(Country country, RedirectAttributes redir) {
+	public ModelAndView deleteCountry(int countryId) {
 		ModelAndView mv = new ModelAndView();
 		
-		dao.deleteCountry(country);
-		redir.addFlashAttribute("country", country);
-		mv.setViewName("redirect:countryDeleted.do");
+		boolean delete = dao.deleteCountry(countryId);
+		mv.addObject("delete", delete);
+		mv.setViewName("countrydeleted");
 		return mv;
 		
 	}
@@ -62,12 +64,38 @@ public class CountryController {
 		return mv;
 		
 	}
+	@RequestMapping(path = "findById.do")
+	public ModelAndView search(int id) {
+		ModelAndView mv = new ModelAndView();
+		Country country = dao.findById(id);
+		mv.addObject("country",country);
+		mv.setViewName("show");
+		return mv;
+		
+	}
 	@RequestMapping(path = "search.do")
-	public ModelAndView search(Country country, RedirectAttributes redir) {
+	public ModelAndView searchForm() {
 		ModelAndView mv = new ModelAndView();
 		
-		
 		mv.setViewName("search");
+		return mv;
+		
+	}
+	@RequestMapping(path = "searchByKeyword.do")
+	public ModelAndView searchKeyword() {
+		ModelAndView mv = new ModelAndView();
+		
+		mv.setViewName("keyword");
+		return mv;
+		
+	}
+	@RequestMapping(path = "findByKeyword.do")
+	public ModelAndView keyword(String keyword, RedirectAttributes redir) {
+		ModelAndView mv = new ModelAndView();
+		List<Country> country = dao.findByKeyword(keyword);
+		mv.addObject("country",country);
+		
+		mv.setViewName("keyworddisplay");
 		return mv;
 		
 	}
@@ -78,6 +106,15 @@ public class CountryController {
 		mv.setViewName("show");
 		return mv;
 
+	}
+	@RequestMapping(path = "list.do", method = RequestMethod.GET)
+	public ModelAndView listCountries(Country country) {
+		ModelAndView mv = new ModelAndView();
+		
+		mv.addObject("countrylist",dao.showAll());
+		mv.setViewName("showall");
+		return mv;
+		
 	}
 	
 	

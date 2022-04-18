@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-    
+     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,19 +10,17 @@
 </head>
 <body>
 <a href="home.do" id="id">BucketList Homepage</a>
+<ul>
+<c:forEach items="${countrylist }" var= "country" >
+<li> <a href="findById.do?id=${country.id}">${country.name}</a> </li>
 
 
-<h3>Search By Id</h3>
+</c:forEach>
 
-<form action="findById.do" method="GET">
 
-<h1>Search Film By Id</h1>
 
-ID: <input type="text" name="id" />
-	<input type="submit" value="submit" />
 
-</form>
-
+</ul>
 
 </body>
 </html>

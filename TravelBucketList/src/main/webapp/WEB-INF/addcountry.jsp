@@ -6,9 +6,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Add a Country</title>
+<link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
-
+<a href="home.do" id="id">BucketList Homepage</a>
 	<h3>Add a Country</h3>
 
 	<form action="addCountry.do" method="POST">
